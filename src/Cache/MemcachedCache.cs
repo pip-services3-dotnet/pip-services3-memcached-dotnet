@@ -34,7 +34,7 @@ namespace PipServices.Memcached.Cache
             _credentialResolver.SetReferences(references);
         }
 
-        public bool IsOpened()
+        public bool IsOpen()
         {
             return _client != null;
         }
@@ -80,7 +80,7 @@ namespace PipServices.Memcached.Cache
 
         private void CheckOpened(string correlationId)
         {
-            if (!IsOpened())
+            if (!IsOpen())
                 throw new InvalidStateException(correlationId, "NOT_OPENED", "Connection is not opened");
         }
 
