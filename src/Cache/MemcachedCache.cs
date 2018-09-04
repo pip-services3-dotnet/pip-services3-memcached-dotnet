@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Threading.Tasks;
+
 using Enyim.Caching;
 using Enyim.Caching.Configuration;
+
 using PipServices.Commons.Config;
 using PipServices.Commons.Errors;
 using PipServices.Commons.Refer;
-using PipServices.Commons.Run;
 using PipServices.Components.Auth;
 using PipServices.Components.Cache;
 using PipServices.Components.Connect;
 
 namespace PipServices.Memcached.Cache
 {
-    public class MemcachedCache : ICache, IConfigurable, IReferenceable, IOpenable
+    public class MemcachedCache : AbstractCache
     {
         private ConnectionResolver _connectionResolver = new ConnectionResolver();
         private CredentialResolver _credentialResolver = new CredentialResolver();
@@ -22,24 +23,26 @@ namespace PipServices.Memcached.Cache
         {
         }
 
-        public void Configure(ConfigParams config)
+        public override void Configure(ConfigParams config)
         {
+            base.Configure(config);
+
             _connectionResolver.Configure(config);
             _credentialResolver.Configure(config);
         }
 
-        public void SetReferences(IReferences references)
+        public override void SetReferences(IReferences references)
         {
             _connectionResolver.SetReferences(references);
             _credentialResolver.SetReferences(references);
         }
 
-        public bool IsOpen()
+        public override bool IsOpen()
         {
             return _client != null;
         }
 
-        public async Task OpenAsync(string correlationId)
+        public override async Task OpenAsync(string correlationId)
         {
             var connections = await _connectionResolver.ResolveAllAsync(correlationId);
             if (connections.Count == 0)
@@ -67,7 +70,7 @@ namespace PipServices.Memcached.Cache
             _client = new MemcachedClient(null, options);
         }
 
-        public async Task CloseAsync(string correlationId)
+        public override async Task CloseAsync(string correlationId)
         {
             if (_client != null)
             {
@@ -84,23 +87,25 @@ namespace PipServices.Memcached.Cache
                 throw new InvalidStateException(correlationId, "NOT_OPENED", "Connection is not opened");
         }
 
-        public async Task<T> RetrieveAsync<T>(string correlationId, string key)
+        public override async Task<T> RetrieveAsync<T>(string correlationId, string key)
         {
             CheckOpened(correlationId);
 
             return await _client.GetAsync<T>(key);
         }
 
-        public async Task<T> StoreAsync<T>(string correlationId, string key, T value, long timeout)
+        public override async Task<T> StoreAsync<T>(string correlationId, string key, T value, long timeout)
         {
             CheckOpened(correlationId);
+
+            timeout = timeout > 0 ? timeout : Timeout;
 
             var result = await _client.StoreAsync(Enyim.Caching.Memcached.StoreMode.Set, key, value, TimeSpan.FromMilliseconds(timeout));
 
             return result ? value : default(T);
         }
 
-        public async Task RemoveAsync(string correlationId, string key)
+        public override async Task RemoveAsync(string correlationId, string key)
         {
             CheckOpened(correlationId);
 

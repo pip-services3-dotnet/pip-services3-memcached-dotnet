@@ -6,7 +6,7 @@
     <RootNamespace>PipServices.Memcached</RootNamespace>
     <ApplicationIcon />
     <Win32Resource />
-    <Version>3.0.1</Version>
+    <Version>3.0.2</Version>
     <Authors>Sergey Seroukhov, Alex Mazur</Authors>
     <Copyright>Conceptual Vision Consulting LLC. 2017-2018</Copyright>
     <Description>Memcached components for Pip.Services in .NET</Description>
@@ -30,7 +30,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="VIEApps.Enyim.Caching" Version="1.5.4.1808" />
-    <PackageReference Include="PipServices.Commons" Version="3.0.2" />
-    <PackageReference Include="PipServices.Components" Version="3.0.2" />
+    <PackageReference Include="PipServices.Commons" Version="3.0.4" />
+    <PackageReference Include="PipServices.Components" Version="3.0.3" />
   </ItemGroup>
 </Project>

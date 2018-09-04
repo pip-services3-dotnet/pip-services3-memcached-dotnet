@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Threading.Tasks;
+
 using Benchmark.Data;
+
 using PipBenchmark;
 using PipServices.Commons.Config;
 using PipServices.Commons.Random;
@@ -49,8 +51,10 @@ namespace Benchmark.Benchmark
 
         public void Dispose() { }
 
-        public override async void SetUp() { }
-
+        public override async void SetUp()
+        {
+            await Task.Delay(0);
+        }
 
         public void BenchmarkCreate()
         {
