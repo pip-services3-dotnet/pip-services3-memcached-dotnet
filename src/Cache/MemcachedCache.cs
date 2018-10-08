@@ -21,26 +21,27 @@ namespace PipServices.Memcached.Cache
     /// ### Configuration parameters ###
     /// 
     /// connection(s):           
-    /// discovery_key:         (optional) a key to retrieve the connection from IDiscovery
-    /// host:                  host name or IP address
-    /// port:                  port number
-    /// uri:                   resource URI or connection string with all parameters in it
+    /// - discovery_key:         (optional) a key to retrieve the connection from <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_connect_1_1_i_discovery.html">IDiscovery</a>
+    /// - host:                  host name or IP address
+    /// - port:                  port number
+    /// - uri:                   resource URI or connection string with all parameters in it
+    /// 
     /// options:
-    /// max_size:              maximum number of values stored in this cache (default: 1000)        
-    /// max_key_size:          maximum key length (default: 250)
-    /// max_expiration:        maximum expiration duration in milliseconds (default: 2592000)
-    /// max_value:             maximum value length (default: 1048576)
-    /// pool_size:             pool size (default: 5)
-    /// reconnect:             reconnection timeout in milliseconds (default: 10 sec)
-    /// retries:               number of retries (default: 3)
-    /// timeout:               default caching timeout in milliseconds (default: 1 minute)
-    /// failures:              number of failures before stop retrying (default: 5)
-    /// retry:                 retry timeout in milliseconds (default: 30 sec)
-    /// idle:                  idle timeout before disconnect in milliseconds (default: 5 sec)
+    /// - max_size:              maximum number of values stored in this cache (default: 1000)        
+    /// - max_key_size:          maximum key length (default: 250)
+    /// - max_expiration:        maximum expiration duration in milliseconds (default: 2592000)
+    /// - max_value:             maximum value length (default: 1048576)
+    /// - pool_size:             pool size (default: 5)
+    /// - reconnect:             reconnection timeout in milliseconds (default: 10 sec)
+    /// - retries:               number of retries (default: 3)
+    /// - timeout:               default caching timeout in milliseconds (default: 1 minute)
+    /// - failures:              number of failures before stop retrying (default: 5)
+    /// - retry:                 retry timeout in milliseconds (default: 30 sec)
+    /// - idle:                  idle timeout before disconnect in milliseconds (default: 5 sec)
     /// 
     /// ### References ###
     /// 
-    /// - *:discovery:*:*:1.0        (optional) IDiscovery services to resolve connection
+    /// - *:discovery:*:*:1.0        (optional) <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_connect_1_1_i_discovery.html">IDiscovery</a> services to resolve connection
     /// </summary>
     /// <example>
     /// <code>
