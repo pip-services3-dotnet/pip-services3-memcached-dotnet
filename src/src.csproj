@@ -2,20 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>PipServices.Memcached</AssemblyName>
-    <RootNamespace>PipServices.Memcached</RootNamespace>
+    <AssemblyName>PipServices3.Memcached</AssemblyName>
+    <RootNamespace>PipServices3.Memcached</RootNamespace>
     <ApplicationIcon />
     <Win32Resource />
-    <Version>3.0.2</Version>
+    <Version>3.0.3</Version>
     <Authors>Sergey Seroukhov, Alex Mazur</Authors>
     <Copyright>Conceptual Vision Consulting LLC. 2017-2018</Copyright>
     <Description>Memcached components for Pip.Services in .NET</Description>
     <Company>Conceptual Vision Consulting LLC.</Company>
-    <Product>PipServices.Memcached</Product>
+    <Product>PipServices3.Memcached</Product>
     <PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/pip-services-dotnet/pip-services-memcached-dotnet</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/pip-services3-dotnet/pip-services3-memcached-dotnet</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/pip-services/pip-services/master/design/Icon.png</PackageIconUrl>
-    <PackageTags>pip-services microservices framework</PackageTags>
+    <PackageTags>PipServices V3 microservices toolkit</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
@@ -30,7 +30,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="VIEApps.Enyim.Caching" Version="1.5.4.1808" />
-    <PackageReference Include="PipServices.Commons" Version="3.0.4" />
-    <PackageReference Include="PipServices.Components" Version="3.0.3" />
+    <PackageReference Include="PipServices3.Commons" Version="3.0.6" />
+    <PackageReference Include="PipServices3.Components" Version="3.0.4" />
   </ItemGroup>
 </Project>

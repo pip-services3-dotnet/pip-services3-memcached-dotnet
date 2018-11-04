@@ -1,7 +1,7 @@
 {
-    "name": "pip-services-memcached-dotnet-benchmark",
-    "deployment": "pip-services-memcached-dotnet-benchmark",
-    "image": "devbootbarn.azurecr.io/pip-services-memcached-dotnet-benchmark",
+    "name": "pip-services3-memcached-dotnet-benchmark",
+    "deployment": "pip-services3-memcached-dotnet-benchmark",
+    "image": "devbootbarn.azurecr.io/pip-services3-memcached-dotnet-benchmark",
     "version": "1.0.0",
     "build_number": "1"
 }

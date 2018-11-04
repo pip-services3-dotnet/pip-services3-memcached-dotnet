@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
-using PipServices.Commons.Config;
-using PipServices.Commons.Convert;
+using PipServices3.Commons.Config;
+using PipServices3.Commons.Convert;
 using Xunit;
 
-namespace PipServices.Memcached.Lock
+namespace PipServices3.Memcached.Lock
 {
     [Collection("Sequential")]
     public class MemcachedLockTest : IDisposable

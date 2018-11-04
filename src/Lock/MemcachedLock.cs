@@ -2,15 +2,15 @@
 using System.Threading.Tasks;
 using Enyim.Caching;
 using Enyim.Caching.Configuration;
-using PipServices.Commons.Config;
-using PipServices.Commons.Errors;
-using PipServices.Commons.Refer;
-using PipServices.Commons.Run;
-using PipServices.Components.Auth;
-using PipServices.Components.Connect;
-using PipServices.Components.Lock;
+using PipServices3.Commons.Config;
+using PipServices3.Commons.Errors;
+using PipServices3.Commons.Refer;
+using PipServices3.Commons.Run;
+using PipServices3.Components.Auth;
+using PipServices3.Components.Connect;
+using PipServices3.Components.Lock;
 
-namespace PipServices.Memcached.Lock
+namespace PipServices3.Memcached.Lock
 {
     /// <summary>
     /// Distributed lock that implemented based on Memcaches caching service.
@@ -20,7 +20,7 @@ namespace PipServices.Memcached.Lock
     /// ### Configuration parameters ###
     /// 
     /// connection(s):
-    /// - discovery_key:         (optional) a key to retrieve the connection from <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_connect_1_1_i_discovery.html">IDiscovery</a>
+    /// - discovery_key:         (optional) a key to retrieve the connection from <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_connect_1_1_i_discovery.html">IDiscovery</a>
     /// - host:                  host name or IP address
     /// - port:                  port number
     /// - uri:                   resource URI or connection string with all parameters in it
@@ -41,7 +41,7 @@ namespace PipServices.Memcached.Lock
     /// 
     /// ### References ###
     /// 
-    /// - *:discovery:*:*:1.0        (optional) <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_connect_1_1_i_discovery.html">IDiscovery</a> services to resolve connection
+    /// - *:discovery:*:*:1.0        (optional) <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_connect_1_1_i_discovery.html">IDiscovery</a> services to resolve connection
     /// </summary>
     /// <example>
     /// <code>
@@ -54,7 +54,7 @@ namespace PipServices.Memcached.Lock
     /// lock.ReleaseLock("123", "key1");
     /// </code>
     /// </example>
-    public class MemcachedLock : PipServices.Components.Lock.Lock,
+    public class MemcachedLock : PipServices3.Components.Lock.Lock,
         IConfigurable, IReferenceable, IOpenable
     {
         private ConnectionResolver _connectionResolver = new ConnectionResolver();

@@ -5,9 +5,9 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyName>PipServices.Memcached.Test</AssemblyName>
+    <AssemblyName>PipServices3.Memcached.Test</AssemblyName>
 
-    <RootNamespace>PipServices.Memcached</RootNamespace>
+    <RootNamespace>PipServices3.Memcached</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">

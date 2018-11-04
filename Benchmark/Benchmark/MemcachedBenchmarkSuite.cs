@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Benchmark.Data;
 
 using PipBenchmark;
-using PipServices.Commons.Config;
-using PipServices.Commons.Random;
-using PipServices.Memcached.Cache;
+using PipServices3.Commons.Config;
+using PipServices3.Commons.Random;
+using PipServices3.Memcached.Cache;
 
 namespace Benchmark.Benchmark
 {

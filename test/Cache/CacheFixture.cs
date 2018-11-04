@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
 
-using PipServices.Components.Cache;
+using PipServices3.Components.Cache;
 
 using Xunit;
 
-namespace PipServices.Memcached.Cache
+namespace PipServices3.Memcached.Cache
 {
     public class CacheFixture
     {
