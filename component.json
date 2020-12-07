@@ -1,6 +1,6 @@
 {
-    "name": "pip-services3-memcached",
+    "name": "pip-services3-memcached-dotnet",
     "registry": "pipdevs",
     "version": "3.1.1",
-    "build": "0"
+    "build": 0
 }
